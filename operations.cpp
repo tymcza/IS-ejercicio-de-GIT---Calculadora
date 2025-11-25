@@ -1,4 +1,4 @@
-#include <operations.h>
+#include "operations.h"
 #include <cmath>
 #include "inout.h"
 
@@ -25,24 +25,24 @@ double exp(double num1, double num2){
 }
 
 double execute(tDatos datos){
-    if (datos.getOperator() == "Add"){
-        return add(datos.getNum1(), datos.getNum2());
+    if (getOperator() == "Add"){
+        return add(getNum1(),getNum2());
     }
-    else if (datos.getOperator() == "Sub"){
-        return sub(datos.getNum1(), datos.getNum2());
+    else if (getOperator() == "Sub"){
+        return sub(getNum1(), getNum2());
     }
-    else if (datos.getOperator() == "Mul"){
-        return mul(datos.getNum1(), datos.getNum2());
+    else if (getOperator() == "Mul"){
+        return mul(getNum1(), getNum2());
     }
-    else if (datos.getOperator() == "Div"){
-        if (datos.getNum2() == 0){
+    else if (getOperator() == "Div"){
+        if (getNum2() == 0){
             cout << "Error: Division por cero" << endl;
             return 0;
         }
-        else return div(datos.getNum1(), datos.getNum2());
+        else return div(getNum1(), getNum2());
     }
-    else if (datos.getOperator() == "Exp"){
-        return exp(datos.getNum1(), datos.getNum2());
+    else if (getOperator() == "Exp"){
+        return exp(getNum1(), getNum2());
     }
     else {
         cout << "Operador no valido" << endl;
