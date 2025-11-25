@@ -4,51 +4,50 @@
 
 using namespace std;
 
-double add(double num1, double num2){
+double add(double num1, double num2) {
     return num1 + num2;
 }
 
-double sub(double num1, double num2){
+double sub(double num1, double num2) {
     return num1 - num2;
 }
 
-double mul(double num1, double num2){
+double mul(double num1, double num2) {
     return num1 * num2;
 }
 
-double div(double num1, double num2){
+double div(double num1, double num2) {
     return num1 / num2;
 }
 
-double exp(double num1, double num2){
+double exp(double num1, double num2) {
     return pow(num1, num2);
 }
 
-double execute(tDatos datos){
-    if (getOperator() == "Add"){
-        return add(getNum1(),getNum2());
+double execute(tDatos datos) {
+    if (getOperator(datos) == "Add") {
+        return add(getNum1(datos), getNum2(datos));
     }
-    else if (getOperator() == "Sub"){
-        return sub(getNum1(), getNum2());
+    else if (getOperator(datos) == "Sub") {
+        return sub(getNum1(datos), getNum2(datos));
     }
-    else if (getOperator() == "Mul"){
-        return mul(getNum1(), getNum2());
+    else if (getOperator(datos) == "Mul") {
+        return mul(getNum1(datos), getNum2(datos));
     }
-    else if (getOperator() == "Div"){
-        if (getNum2() == 0){
+    else if (getOperator(datos) == "Div") {
+        if (getNum2(datos) == 0) {
             cout << "Error: Division por cero" << endl;
             return 0;
         }
-        else return div(getNum1(), getNum2());
+        else return div(getNum1(datos), getNum2(datos));
     }
-    else if (getOperator() == "Exp"){
-        return exp(getNum1(), getNum2());
+    else if (getOperator(datos) == "Exp") {
+        return exp(getNum1(datos), getNum2(datos));
     }
     else {
         cout << "Operador no valido" << endl;
         return 0;
     }
 }
-
 
 
