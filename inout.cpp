@@ -34,7 +34,7 @@ void mostrarSolucion(double sol) {
     cout<< endl<<" :"<< sol;   
 }
 
-void mostrarError(std::string error){
+void mostrarError(string error){
     cout<<"Ha ocurrido un error\n\n";
     cout<<error;
 }
