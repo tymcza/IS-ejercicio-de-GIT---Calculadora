@@ -1,6 +1,7 @@
+
 #include "operations.h"
 #include <cmath>
-#include "INOUT.h"
+#include "inout.h"
 
 using namespace std;
 
@@ -36,18 +37,22 @@ double execute(tDatos datos) {
     }
     else if (getOperator(datos) == "Div") {
         if (getNum2(datos) == 0) {
-            cout << "Error: Division por cero" << endl;
+            mostrarError("Division por cero");
             return 0;
         }
-        else return div(getNum1(datos), getNum2(datos));
+        else
+            return div(getNum1(datos), getNum2(datos));
     }
     else if (getOperator(datos) == "Exp") {
-        return exp(getNum1(datos), getNum2(datos));
+        if (getNum1(datos) == 0 && getNum2(datos) == 0) {
+            mostrarError("0 no puede ser elevado a 0");
+            return 0;
+        }
+        else
+            return exp(getNum1(datos), getNum2(datos));
     }
     else {
-        cout << "Operador no valido" << endl;
+        mostrarError("Operador no valido");
         return 0;
     }
 }
-
-

@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-#include "INOUT.h"
+#include "inout.h"
 
 double add(double num1, double num2);
 double sub(double num1, double num2);
