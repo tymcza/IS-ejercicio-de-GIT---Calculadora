@@ -4,14 +4,9 @@
 #include <string>
 #include <stdexcept>
 #include <limits>
+#include <INOUT.h>
 
 using namespace std;
-
-typedef struct tDatos {
-    double num1;
-    double num2;
-    string operador;
-};
 
 tDatos lectura(){
     string in_operador;
