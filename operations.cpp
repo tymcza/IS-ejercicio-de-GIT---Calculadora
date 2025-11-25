@@ -1,6 +1,6 @@
 #include "operations.h"
 #include <cmath>
-#include "inout.h"
+#include "INOUT.h"
 
 using namespace std;
 
